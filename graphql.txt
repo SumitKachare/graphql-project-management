@@ -1,0 +1,144 @@
+Queries
+
+Client :
+
+1. Get all clients.
+
+	query getClients {
+	  getClients {
+		id,name, phone
+	  }
+	}
+	
+2. Get client data
+	
+	query GetClient($clientId: ID){
+	  getClient(clientId: $clientId) {
+		email,
+		name,
+		phone
+	  }
+	}
+
+	variables :
+	{
+		"clientId": "62b897791a5a3a6f4927412b"
+	}
+
+Project :
+
+3. Get all projects.
+
+	query GetProjects{
+		getProjects {
+			clientId
+			description
+			id
+			name
+		}
+	}
+
+4. Get Project data
+
+	query GetProjectData($projectId: ID!){
+		getProject(projectId : $projectId) {
+			clientId
+			description
+			id
+			name
+		}
+	}
+
+	variables :
+	{
+	"projectId": "62c2c4cd194e8796fba65171" 
+	}	
+	
+
+Mutations
+
+Client :
+
+1. Create Client
+
+	mutation createClient($client: ClientInput){
+		createClient(client: $client){
+			id,
+			name
+			email
+			phone
+		}
+	}
+
+	variables :
+	{
+		"client" : {
+			"name":"Sumit",
+			"email": "ssd@gmail.com",
+			"phone":"7039941274"
+		}
+	}
+
+2. Delete Client
+
+	mutation deleteClient($clientId: ID!){
+		deleteClient(clientId: $clientId)
+	}
+
+	variables : 
+	{
+		"clientId": "62c1b7d3c1bee41286c4ab7c"
+	}
+
+Project :
+
+3. Create Project
+
+	mutation createProject($project : ProjectInput){
+		createProject(project: $project) {
+			clientId
+			description
+			id
+			name
+		}
+	}
+
+	variables :
+	{
+		"project": {
+			"name": "expenses server",
+			"clientId" : "62c2c0113d183e48dba8bad5",
+			"description": "expenses app server",
+			"status" :"completed"
+		}
+	}
+
+4. Update Project
+
+	mutation updateProject($updateProject: ProjectUpdateInput , $projectId: ID!){
+		updateProject(updateProject: $updateProject , projectId: $projectId){
+			name,
+			id,
+			clientId,
+			description
+		}
+	}
+
+	variables :
+	{
+	"updateProject": {
+		"name" : "Expense server update"
+	},
+	"projectId": "62c2c4cd194e8796fba65171"
+	}
+
+5. Delete Project
+
+	mutation deleteProject($projectId: ID!){
+		deleteProject(projectId: $projectId)
+	}
+
+	variables :
+	{
+		"projectId": "62c31f1ce2b699512bd9a6c7"
+	}
