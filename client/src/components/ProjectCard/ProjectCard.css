@@ -1,0 +1,18 @@
+.project_card_container{
+    width: 300px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.project_description{
+    padding: 10px 0;
+}
+
+.project_info{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}

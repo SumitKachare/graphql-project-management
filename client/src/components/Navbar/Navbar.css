@@ -1,0 +1,27 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    /* background-color: aqua; */
+}
+
+.navbar__left{
+    display: flex;
+    align-items: center;
+}
+
+.navbar__right{
+    display: flex;
+    align-items: center;
+}
+
+.navbar__item{
+    margin: 0 1em;
+}
+
+.navbar--search{
+    border: 1px solid black;
+    padding: 0.7em;
+    border-radius: 20px;
+    margin-left: 5em;
+}

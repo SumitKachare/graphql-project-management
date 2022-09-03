@@ -24,7 +24,9 @@ const resolvers = {
 
         // project queries
         getProjects: async () => {
-            const data = await Project.find()
+            const data = await Project.find({})
+            // const data = await Project.find({}).populate("clientId")
+            // console.log(data);
             return data
         },
         getProject: async (parent , args) => {
