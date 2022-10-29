@@ -1,29 +1,44 @@
-Project Management :
+Project Name : Project Management Application
 
-Project Description
-    - To create a project management app where users can do CRUD operations on project and the users
-    - User Authentication
+Description : 
+	- An application which shows all the projects and the clients. 
+	- CRUD functionality for creating and modifying projects and clients.
+	- User Authentication
+	- Realtime Stats on Project and Client shown in graphical view.
+
 
 What will I learn?
-    - To setup graphQL server to consume the api on frontend.
-    - Learn how to make api requests or using react-query properly for graphl query and muatations and validations.
-    - Understand the basics and foundations of graphQL artitecture and development.
-    - Implemention of graphql-request package.
-    - follow best practices and conventions.
-    - mobile responsive
-    - test cases for client and server
-    - ES linting setup
-    - sonarcube implementation
-    - dockerize
-    - deployment on aws
+
+	- Backend
+		- GraphQL server setup in backend using apollo-server.
+		- Understanding of graphQL foundations from artitecture and development persective.
+		
+	
+	- Frontend
+		- Using graphql-request as graphql client to call queries in frontend.
+		- Use react query to cache requests and optimise the performace.
+		- Mobile responsive.
+		- Unit testing
+			
+	- Cloud
+	    - Dockerize
+		- Deployment on AWS
+	
+	
+	- Others
+		- Best Practices, Resuing Component , ES Linter/Sonar Cube , Code commenting practise
+	
+
 
 
 
 Tech Stack
+
     - Frontend
         - react
         - react-query
         - grapql-request
+		
     - Backend
         - express 
         - graphql
@@ -31,6 +46,3 @@ Tech Stack
         - mongodb
 	
 
-Features
-    - CRUD api functionality for projects and users.
-    - user authentication.

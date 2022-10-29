@@ -4,15 +4,61 @@
     border: 1px solid black;
     border-radius: 20px;
     padding: 10px;
-    cursor: pointer;
+    background-color: #fff;
+    box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.75);
+
+}
+
+.card_green_bg{
+    background-color: #9dff70;
+}
+
+.card_yellow_bg{
+    background-color: #f2f26f;
+}
+
+.card_blue_bg{
+    background-color: #69f5f2;
 }
 
 .project_description{
     padding: 10px 0;
+    border-bottom: 0.5px solid black;
 }
 
-.project_info{
+.project__info{
+    margin: 10px;
+}
+
+.project_detail_link{
+    text-decoration: none;
+    color: black;
+}
+
+.card_actions{
+    display: none;
+}
+
+/* hover */
+
+.project_card_container:hover .card_actions{
+    display: inline-block;
     display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+.action_btn{
+    padding: 7px;
+    border-radius: 15px;
+    border: 1px solid black;
+    width: 30%;
+    cursor: pointer;
+    
+}
+
+.action_btn:hover{
+    color: white;
+    background-color: black;
 }

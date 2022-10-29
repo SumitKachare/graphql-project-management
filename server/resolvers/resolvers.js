@@ -24,13 +24,10 @@ const resolvers = {
 
         // project queries
         getProjects: async () => {
-            const data = await Project.find({})
-            // const data = await Project.find({}).populate("clientId")
-            // console.log(data);
+            const data = await Project.find({}).populate("clientId")
             return data
         },
         getProject: async (parent , args) => {
-            console.log("args" , args)
             const projectId = args.projectId
             const data = await Project.findById(projectId)
 
@@ -58,6 +55,8 @@ const resolvers = {
             if (!client) {
                 throw new UserInputError("Client not found")
             }
+
+            // [Pending] : delete all the projects of that client before the client is deleted
 
             await Client.findByIdAndDelete(clientId)
 

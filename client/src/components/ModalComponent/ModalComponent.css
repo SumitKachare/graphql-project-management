@@ -1,0 +1,16 @@
+.modal__component{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    width: 500px;
+    background-color: aliceblue;
+    border: "2px solid #000";
+    box-shadow: 24px;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.modal__component:focus-visible{
+    outline: none;
+}

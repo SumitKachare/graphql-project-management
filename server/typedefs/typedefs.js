@@ -15,6 +15,14 @@ const typeDefs = gql`
         phone: String!
     }
 
+    type ProjectWithClient{
+        id: ID,
+        name: String!,
+        description: String!,
+        status: projectStatus,
+        clientId: Client!
+    }
+
     type Project{
         id: ID,
         name: String!,
@@ -47,7 +55,7 @@ const typeDefs = gql`
         hello: String
         getClients: [Client]
         getClient(clientId: ID!): Client
-        getProjects: [Project]
+        getProjects: [ProjectWithClient]
         getProject(projectId: ID!) : Project!
     }
 

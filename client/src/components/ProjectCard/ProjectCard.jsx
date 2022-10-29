@@ -1,41 +1,51 @@
-import React from 'react'
-import { projectStatus } from '../../constants'
-import "./ProjectCard.css"
+import React from "react";
+import { projectStatus } from "../../constants";
+import "./ProjectCard.css";
 
-const ProjectCard = ({project}) => {
-
+const ProjectCard = ({ project , setIsOpen ,setFormTitle }) => {
+  // set card background color
   const getCardBackgroundColor = (projectStatus) => {
-    let bgColor
+    let bgColor;
 
     if (projectStatus === "in_progress") {
-      bgColor = "#69f5f2"
-    }else if(projectStatus === "completed"){
-      bgColor = "#9dff70"
-    }else{
-      bgColor = "#f2f26f"
+      bgColor = "card_blue_bg";
+    } else if (projectStatus === "completed") {
+      bgColor = "card_green_bg";
+    } else {
+      bgColor = "card_yellow_bg";
     }
 
-    return bgColor
-  }
+    return `project__info ${bgColor}`;
+  };
+
+  const handleEditClick = () => {
+    setIsOpen(true)
+    setFormTitle("Edit Project")
+
+  };
+
+  const handleDeleteClick = () => {
+    
+  };
 
   return (
-    <div className='project_card_container' style={{ backgroundColor : getCardBackgroundColor(project.status)}}>
-      <h3 className='project_title'>{project.name}</h3>
-      <p className='project_description'>{project.description}</p>
-      <div className='project_info'>
-        <div>
-         <p className='project__info_child'>Client : Debu</p>
-        </div>
-        <div>
-        <p className='project__info_child'>Status : {projectStatus[project.status]}</p>
-        </div>
+    <div
+      className="project_card_container"
+    >
+      <h3 className="project_title">{project.name}</h3>
+      <p className="project_description">{project.description}</p>
+
+      <p className="project__info">Client : {project.clientId.name}</p>
+      <p className={getCardBackgroundColor(project.status)}>
+        Status : {projectStatus[project.status]}
+      </p>
+
+      <div className="card_actions">
+        <button onClick={handleEditClick} className="action_btn">Edit</button>
+        <button onClick={handleDeleteClick} className="action_btn">Delete</button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProjectCard
-
-// completed : 9dff70 green
-// started : f2f26f yellow
-// in progress : 69f5f2 blue
+export default ProjectCard;

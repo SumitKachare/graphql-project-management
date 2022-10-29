@@ -6,7 +6,9 @@ export const GET_PROJECTS = () => {
     
     const query =  gql`query getProjects{
             getProjects {
-                clientId
+                clientId{
+                    name
+                }
                 description
                 id
                 name

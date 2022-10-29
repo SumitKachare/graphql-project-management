@@ -1,0 +1,9 @@
+.primary__loader{
+    display: flex;
+    align-items: center;
+    justify-content: center;flex-direction: column;
+}
+
+.loader__message{
+    margin: 10px 0;
+}
